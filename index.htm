@@ -3,9 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Legend HQ - Weather Forecast Machine</title>
+<meta description="The best weather forecast app in the world." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
 </head>
 <body>
+<header><nav class="navbar bg-dark">
+<div class="container-fluid d-flex flex-wrap">
+                <div class="d-flex flex-column flex-md-row col-12 col-md-4 align-items-center">
+                    <!-- Brand container with flex -->
+                    <a href="/index.htm">
+                        <img src="" alt="Logo" class="img-fluid">
+                        
+                    </a>
+                </div>
+
+
+</nav> </header>
+ <main>
+
+<section id="searchBar">
+ <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="search-location">
+        <input type="text" class="form-control search-input" placeholder="Weather in your city">
+        <button class="btn btn-primary search-button">
+                    Search
+                </button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="todayForecast">
+<div class="container">
+    <h1 class="searchCity">Input Search City</h1>
+  <div class="row">
+    <div class="col-sm bg-dark">
+     <img src="assets/images/LinkedIn.png" class="todayIcon"/>
+    </div>
+    <div id="todayMainInfo" class="col-sm">
+        <p class="mainDescription"></p>
+      <table>
+      <tr><td>Temperature:</td><td class="tempNow"></td></tr>
+      <tr><td>Real Feel:</td><td class="feel"></td></tr> 
+      <tr><td>Humidity:</td><td class="humidity"></td></tr>
+      <tr><td>Wind:</td><td class="wind"></td></tr>    
+      </table>
+
+<p class="sunrise"></p>
+<p class="sunset"></p>
+
+    </div>
+   
+  </div>
+</div>    
+
+</section>
+<section id="fiveDayForecast">
+<div class="container">
+  <div class="row">
+    <div id="dayOne" class="col-sm">
+      Forecast day+1
+      <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+        </div>
+    <div id="dayTwo" class="col-2">
+     Forecast day+2
+     <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+    </div>
+    <div id="dayThree" class="col-2">
+     Forecast day+3
+     <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+    </div>
+    <div id="dayFour" class="col-2">
+     Forecast day+4
+     <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+    </div>
+    <div id="dayFive" class="col-2">
+     Forecast day+5
+     <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+    </div>
+    <div id="daySix" class="col-2">
+     Forecast day+6
+     <img class="weatherIcon">
+      <p class="tempHigh"></p>
+      <p class="tempLow"></p>
+    </div>
+   
+  </div>
+</div>    
+
+
+</section>
+
+</main>
+
+
+ <footer></footer> 
     
 </body>
 </html>
