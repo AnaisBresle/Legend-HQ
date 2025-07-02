@@ -1,138 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legend HQ - Weather Forecast Machine</title>
-<meta description="The best weather forecast app in the world." />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legend HQ - Weather Forecast Machine</title>
+  <meta description="The best weather forecast app in the world." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
 </head>
+
 <body>
-<header><nav class="navbar bg-dark">
-<div class="container-fluid d-flex flex-wrap">
-                <div class="d-flex flex-column flex-md-row col-12 col-md-4 align-items-center">
-                    <!-- Brand container with flex -->
-                    <a href="/index.htm">
-                        <img src="" alt="Logo" class="img-fluid">
-                        
-                    </a>
-                </div>
+  <header>
+    <nav class="navbar bg-dark">
+      <div class="container-fluid d-flex flex-wrap">
+        <div class="d-flex flex-column flex-md-row col-12 col-md-4 align-items-center">
+          <!-- Brand container with flex -->
+          <a href="/index.htm">
+            <img src="" alt="Logo" class="img-fluid">
 
-
-</nav> </header>
- <main class="py-4">
-
-<section id="searchBar my-4">
- <div class="container m-4 ">
-  <div class="d-flex flex-column flex-md-row justify-content-center">
-      <div class="search-location col-12 col-md-6 px-3 ">
-        <input type="text" class="form-control search-input" placeholder="Weather in your city">
-         </div>   
-       <div class="col-12 col-md-2 px-3">  
-      <button class="my-2 btn btn-primary search-button">   
-            Search
-        </button></div>
+          </a>
         </div>
-    
-  
-</div>
-</section>
-
-<section id="todayForecast">
-<div class="container">
-  <!--City and Timestamp row-->
-  <div class="align-with-todayFocus d-flex flex-column py-3">
-   
-      <h1 class="searchCity mb-0 me-3">Input Search City</h1>
-      <p class="timeStamp mb-0">timeStamp</p>
-    
-  </div>
-<!--Main Forecast for today-->
-  <div class="row todayFocus align-items-center">
-    <div class="col-md-5">
-     <img src="assets/images/LinkedIn.png" class="todayIcon"/>
-    </div>
-    <div id="todayMainInfo" class="col-md-7">
-        <p class="mainDescription">Rain drizzle, partly cloudy</p>
-      <table class="table table-borderless mb-3">
-      <tr><td>Temperature:</td><td class="tempNow data"></td></tr>
-      <tr><td>Real Feel:</td><td class="feel data"></td></tr> 
-      <tr><td>Humidity:</td><td class="humidity data"></td></tr>
-      <tr><td>Wind:</td><td class="wind data"></td></tr>    
-      </table>
 
 
-    </div>
-
-   
-  </div>
-<!--Sun Rise and Set times-->
-      <div class="d-flex flex-column align-with-todayFocus justify-content-between py-3">
-        
-       <p class="sunrise mb-0">Sunrise:</p>
-      <p class="sunset mb-0">Sunset:</p>
-    
-
-
-</div>
-</div>    
-
-</section>
-<section id="fiveDayForecast">
-<div class="container">
-  <div class="row">
-    <div id="dayOne" class="col-sm">
-      Forecast day+1
-      <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
+    </nav>
+  </header>
+  <main class="py-4">
+<!--Search Bar-->
+    <section id="searchBar">
+      <div class="container m-4 ">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <div class="row">
+              <div class="search-location col-12 col-md-9">
+                <input type="text" class="form-control search-input" placeholder="Weather in your city">
+              </div>
+              <div class="col-12 col-md-3">
+                <button class="my-2 btn btn-primary search-button">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-    <div id="dayTwo" class="col-2">
-     Forecast day+2
-     <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
-    </div>
-    <div id="dayThree" class="col-2">
-     Forecast day+3
-     <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
-    </div>
-    <div id="dayFour" class="col-2">
-     Forecast day+4
-     <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
-    </div>
-    <div id="dayFive" class="col-2">
-     Forecast day+5
-     <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
-    </div>
-    <div id="daySix" class="col-2">
-     Forecast day+6
-     <img class="weatherIcon">
-      <p class="tempHigh"></p>
-      <p class="tempLow"></p>
-    </div>
-   
-  </div>
-</div>    
+
+      </div>
+    </section>
+
+    <section id="todayForecast">
+      <div class="container">
+        <!--City and Timestamp row-->
+        <div class="align-with-todayFocus d-flex flex-column py-3">
+
+          <h1 class="searchCity mb-0 me-3">Input Search City</h1>
+          <p class="timeStamp mb-0">timeStamp</p>
+
+        </div>
+        <!--Main Forecast for today-->
+        <div class="row todayFocus align-items-center">
+          <div class="col-md-5">
+            <img src="assets/images/LinkedIn.png" class="todayIcon" />
+          </div>
+          <div id="todayMainInfo" class="col-md-7">
+            <p class="mainDescription">Main description</p>
+            <table class="table table-borderless mb-3">
+              <tr>
+                <td>Temperature:</td>
+                <td class="tempNow data"></td>
+              </tr>
+              <tr>
+                <td>Real Feel:</td>
+                <td class="feel data"></td>
+              </tr>
+              <tr>
+                <td>Humidity:</td>
+                <td class="humidity data"></td>
+              </tr>
+              <tr>
+                <td>Wind:</td>
+                <td class="wind data"></td>
+              </tr>
+            </table>
 
 
-</section>
-
-</main>
+          </div>
 
 
- <footer></footer> 
-    <script src="./assets/js/script.js"></script>  
+        </div>
+        <!--Sun Rise and Set times-->
+        <div class="d-flex flex-column align-with-todayFocus justify-content-between py-3">
 
-    
+          <p class="sunrise mb-0">Sunrise:</p>
+          <p class="sunset mb-0">Sunset:</p>
+
+
+
+        </div>
+      </div>
+
+    </section>
+    <section id="fiveDayForecast">
+      <div class="container">
+        <div class="row">
+          <div id="dayOne" class="col-sm">
+            Forecast day+1
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+          <div id="dayTwo" class="col-2">
+            Forecast day+2
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+          <div id="dayThree" class="col-2">
+            Forecast day+3
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+          <div id="dayFour" class="col-2">
+            Forecast day+4
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+          <div id="dayFive" class="col-2">
+            Forecast day+5
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+          <div id="daySix" class="col-2">
+            Forecast day+6
+            <img class="weatherIcon">
+            <p class="tempHigh"></p>
+            <p class="tempLow"></p>
+          </div>
+
+        </div>
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+  <footer></footer>
+  <script src="./assets/js/script.js"></script>
+
+
 
 </body>
+
 </html>
