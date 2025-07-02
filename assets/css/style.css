@@ -28,7 +28,6 @@
 
 .todayFocus {
     background-color: white;
-    max-width: 80%;
     margin: 1.5rem auto;
     border-radius: 8px;
     border: solid 1px blue;
@@ -59,11 +58,4 @@
   .searchCity,
   .timeStamp {
     text-align: center;};
-
-    .todayFocus {
-        max-width: 100% !important;
-    margin: 1rem 0 !important;
-  };
-
-
 }
