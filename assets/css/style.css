@@ -14,13 +14,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #888;
-}
 
 #todayForecast {
     background-color: aqua;
@@ -40,7 +33,6 @@
     border-radius: 8px;
     border: solid 1px blue;
     box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
-    flex-grow: 1;
 }
 
 .timeStamp {
@@ -53,6 +45,13 @@
 @media (max-width: 767.98px) {
   .searchCity,
   .timeStamp {
-    text-align: center;
-  }
+    text-align: center;};
+
+    .todayFocus {
+    flex-grow: 1;
+  };
+
+  .search-input {
+    height: 50px;
+    border-radius: 30px;};
 }
