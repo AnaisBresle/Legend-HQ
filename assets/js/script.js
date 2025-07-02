@@ -34,7 +34,11 @@ function onfetchWeather() {
             if (data.length === 0) {
                 console.log("No city found.");
             } else {
-                const { lat, lon, name, country } = data[0];
+                // const cityHedaderEl = document.querySelector(".searchCity");
+                // cityHedaderEl.textContent = data[0].name + ", " + data[0].country
+                document.querySelector(".searchCity").textContent = data[0].name + ", " + data[0].country
+                // alert(data[0].country);
+                const { lat, lon, name, country } = data[0]; // this is known as: object destructuring
                 console.log(`City: ${name}, Country: ${country}, Lat: ${lat}, Lon: ${lon}`);
                 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;  
                  // Fetch weather using lat & lon
@@ -48,8 +52,17 @@ function onfetchWeather() {
                 .then((weatherData) => {
                     console.log(weatherData); // Here’s your actual weather info
                     const temp = weatherData.main.temp;
+                    const feels_like = weatherData.main.feels_like;
+                    const humidity = weatherData.main.humidity;
+                    
+                    const wind = weatherData.wind.speed;
                     const description = weatherData.weather[0].description;
-                    alert(`Current temperature: ${temp}°C\nConditions: ${description}`);
+                    document.querySelector(".tempNow").textContent = temp + "°C"
+                    document.querySelector(".feel").textContent = feels_like + "°C"
+                    document.querySelector(".humidity").textContent = humidity
+                    document.querySelector(".wind").textContent = wind + "mph"
+                    
+                    //alert(`Current temperature: ${temp}°C\nConditions: ${description}`);
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
