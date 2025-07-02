@@ -29,7 +29,7 @@
 .align-with-todayFocus{ 
   width: 80%;
   margin: 0 auto;
-  flex: 1rem;
+  
 }
 
 
@@ -40,6 +40,7 @@
     border-radius: 8px;
     border: solid 1px blue;
     box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+    flex-grow: 1;
 }
 
 .timeStamp {
