@@ -28,7 +28,7 @@
 
 .todayFocus {
     background-color: white;
-    width: 80%;
+    max-width: 80%;
     margin: 1.5rem auto;
     border-radius: 8px;
     border: solid 1px blue;
@@ -61,7 +61,8 @@
     text-align: center;};
 
     .todayFocus {
-    flex-grow: 1;
+        max-width: 100% !important;
+    margin: 1rem 0 !important;
   };
 
 
