@@ -45,8 +45,8 @@ function onfetchWeather() {
                     const wind = weatherData.wind.speed;
                     // const description = weatherData.weather[0].description;
                     const weatherIconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
-                    document.querySelector(".weather-icon").src = weatherIconURL;
-                    document.querySelector('.weather-description').textContent = main + " - " + description;
+                    document.querySelector(".todayIcon").src = weatherIconURL;
+                    document.querySelector(".mainDescription").textContent = main + " - " + description;
                     document.querySelector(".tempNow").textContent = temp + "°C";
                     document.querySelector(".feel").textContent = feels_like + "°C";
                     document.querySelector(".humidity").textContent = humidity;
