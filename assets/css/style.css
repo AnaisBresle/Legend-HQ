@@ -41,6 +41,19 @@
     color:#888;
 }
 
+#fiveDayForecast {
+    background-color: red;
+}
+
+.dayBox {
+    border-radius: 8px;
+    background-color: aquamarine;
+    border: none;
+    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+    margin:10px
+
+}
+
 
 @media (max-width: 767.98px) {
   .searchCity,
