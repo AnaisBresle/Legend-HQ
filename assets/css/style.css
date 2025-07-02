@@ -29,6 +29,7 @@
 .align-with-todayFocus{ 
   width: 80%;
   margin: 0 auto;
+  flex: 1rem;
 }
 
 
@@ -45,4 +46,12 @@
     font-weight: 600;
     font-size:1.2rem;
     color:#888;
+}
+
+
+@media (max-width: 767.98px) {
+  .searchCity,
+  .timeStamp {
+    text-align: center;
+  }
 }
