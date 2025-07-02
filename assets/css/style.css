@@ -1,7 +1,7 @@
 * {
     font-size: 1rem;
 }
-
+/* Search Bar */
 .search-location {
     position: relative;
 }
@@ -14,10 +14,52 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #888;
+/*Main Forecast */
+#todayForecast {
+    background-color: aqua;
+}
+
+.timeStamp {
+    font-weight: 600;
+    font-size:1.2rem;
+    color:#888;
+}
+
+.todayFocus {
+    background-color: white;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    border: solid 1px blue;
+    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+}
+
+.mainDescription {
+    font-style: italic;
+}
+
+.mainDescription::first-letter {
+    text-transform: uppercase;
+}
+
+
+/* Week Forecast */
+#fiveDayForecast {
+    background-color: red;
+}
+
+.dayBox {
+    border-radius: 8px;
+    background-color: aquamarine;
+    border: none;
+    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+    margin:10px
+
+}
+
+/* Media queries */
+
+@media (max-width: 900px) {
+  .searchCity,
+  .timeStamp {
+    text-align: center;};
 }
