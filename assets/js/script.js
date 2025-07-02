@@ -61,6 +61,7 @@ function onfetchWeather() {
                     document.querySelector(".feel").textContent = feels_like + "°C"
                     document.querySelector(".humidity").textContent = humidity
                     document.querySelector(".wind").textContent = wind + "mph"
+                    document.querySelector(".mainDescription").textContent = description
                     
                     //alert(`Current temperature: ${temp}°C\nConditions: ${description}`);
                 })
