@@ -22,37 +22,39 @@
 
 
 </nav> </header>
- <main>
+ <main class="py-4">
 
-<section id="searchBar">
- <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="search-location">
+<section id="searchBar my-4">
+ <div class="container-fluid m-4">
+  <div class="flex-column">
+    <div class="d-flex justify-content-center">
+      <div class="search-location col-6 px-4">
         <input type="text" class="form-control search-input" placeholder="Weather in your city">
-
-        <button class="btn btn-primary search-button">   
+         </div>   
+       <div class="col-2 px-4">  
+      <button class="my-2 btn btn-primary search-button">   
             Search
-        </button>
-
-        <button class="btn btn-primary search-button">
-                    Search
-                </button>
-
-      </div>
-    </div>
+        </button></div>
+        </div>
+    
   </div>
 </div>
 </section>
 
 <section id="todayForecast">
 <div class="container">
-    <h1 class="searchCity">Input Search City</h1>
-  <div class="row">
-    <div class="col-sm bg-dark">
+  <div class="row py-4 align-with-todayFocus">
+    <div class="col d-flex ">
+      <h1 class="searchCity mb-0 me-3">Input Search City -</h1>
+      <p class="timeStamp mb-0 align-bottom">timeStamp</p>
+    </div>
+  </div>
+
+  <div class="row todayFocus">
+    <div class="col-5">
      <img src="assets/images/LinkedIn.png" class="todayIcon"/>
     </div>
-    <div id="todayMainInfo" class="col-sm">
+    <div id="todayMainInfo" class="col-7">
         <p class="mainDescription"></p>
       <table>
       <tr><td>Temperature:</td><td class="tempNow"></td></tr>
@@ -61,12 +63,20 @@
       <tr><td>Wind:</td><td class="wind"></td></tr>    
       </table>
 
-<p class="sunrise"></p>
-<p class="sunset"></p>
 
     </div>
+
    
   </div>
+
+      <div class="row py-4 align-with-todayFocus">
+        <div class="col d-flex ">
+      <p class="sunrise">Sunrise:</p>
+      <p class="sunset">Sunset:</p>
+    </div>
+
+
+</div>
 </div>    
 
 </section>

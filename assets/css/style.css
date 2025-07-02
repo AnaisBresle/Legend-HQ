@@ -21,3 +21,28 @@
     transform: translateY(-50%);
     color: #888;
 }
+
+#todayForecast {
+    background-color: aqua;
+}
+
+.align-with-todayFocus{ 
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.todayFocus {
+    background-color: white;
+    width: 80%;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    border: solid 1px blue;
+    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+}
+
+.timeStamp {
+    font-weight: 600;
+    font-size:1.2rem;
+    color:#888;
+}
