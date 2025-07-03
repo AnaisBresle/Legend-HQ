@@ -1,6 +1,38 @@
+/* Royal Blue & Gold Premium & Luxury Palette */
+:root {
+    --primary-royal: #1e40af;
+    --secondary-royal: #1d4ed8;
+    --accent-gold: #fbbf24;
+    --light-blue: #dbeafe;
+    --luxury-white: #ffffff;
+    --soft-gold: #fde68a;
+    --text-navy: #1e3a8a;
+    --text-dark: #1e3a8a;
+    --text-gold: #d97706;
+    --text-medium: #3730a3;
+    --royal-gray: #64748b;
+    --border-gold: #fed7aa;
+    --shadow-royal: rgba(30, 64, 175, 0.15);
+    --shadow-gold: rgba(251, 191, 36, 0.25);
+}
+
 * {
     font-size: 1rem;
 }
+
+body {
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--luxury-white) 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+/* Header and Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--secondary-royal) 100%) !important;
+    box-shadow: 0 4px 15px var(--shadow-royal);
+    border-bottom: 3px solid var(--accent-gold);
+}
+
 /* Search Bar */
 .search-location {
     position: relative;
@@ -10,50 +42,199 @@
     height: 50px;
     border-radius: 30px;
     padding-left: 35px;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-gold);
+    box-shadow: 0 4px 15px var(--shadow-royal);
+    background-color: var(--luxury-white);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: var(--primary-royal);
+    box-shadow: 0 4px 20px var(--shadow-royal), 0 0 0 3px var(--accent-gold);
+    outline: none;
+}
+
+.search-button {
+    background: linear-gradient(135deg, var(--primary-royal), var(--secondary-royal));
+    border: 2px solid var(--accent-gold);
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, var(--secondary-royal), var(--primary-royal));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
+    border-color: var(--text-gold);
 }
 
 /*Main Forecast */
 #todayForecast {
-    background-color: aqua;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--light-blue) 50%, var(--luxury-white) 100%);
+    padding: 2rem 0;
+}
+
+.searchCity {
+    color: var(--text-dark);
+    font-weight: 700;
 }
 
 .timeStamp {
     font-weight: 600;
-    font-size:1.2rem;
-    color:#888;
+    font-size: 1.2rem;
+    color: var(--text-gold);
 }
 
 .todayFocus {
-    background-color: white;
+    background-color: var(--luxury-white);
     margin: 1.5rem auto;
-    border-radius: 8px;
-    border: solid 1px blue;
-    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
+    border-radius: 16px;
+    border: 2px solid var(--border-gold);
+    box-shadow: 0 10px 30px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
+    overflow: hidden;
+    position: relative;
+}
+
+.todayFocus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--primary-royal), var(--accent-gold));
+}
+
+.todayIcon {
+    max-width: 120px;
+    max-height: 120px;
 }
 
 .mainDescription {
     font-style: italic;
+    color: var(--text-medium);
+    font-size: 1.1rem;
 }
 
 .mainDescription::first-letter {
     text-transform: uppercase;
 }
 
+#todayMainInfo h6 {
+    color: var(--text-gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#todayMainInfo .data {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Sunrise/Sunset section */
+.sunrise, .sunset {
+    color: var(--text-gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
 
 /* Week Forecast */
 #fiveDayForecast {
-    background-color: red;
+    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--secondary-royal) 100%);
+    color: white;
+    position: relative;
+}
+
+#fiveDayForecast::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(251, 191, 36, 0.1) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+#fiveDayForecast h1 {
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
 }
 
 .dayBox {
-    border-radius: 8px;
-    background-color: aquamarine;
-    border: none;
-    box-shadow: 0 4px 12px rgba(9, 85, 166, 0.3);
-    margin:10px
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 8px 25px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
+    margin: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+}
 
+.dayBox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--primary-royal));
+}
+
+.dayBox:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-royal), 0 8px 25px var(--shadow-gold);
+    background: var(--luxury-white);
+    border-color: var(--text-gold);
+}
+
+.dayBox h3 {
+    color: var(--primary-royal);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.weatherIcon {
+    max-width: 80px;
+    max-height: 80px;
+    margin: 1rem 0;
+}
+
+.tempHigh {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.tempLow {
+    color: var(--royal-gray);
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, var(--secondary-royal) 0%, var(--primary-royal) 100%) !important;
+    box-shadow: 0 -4px 15px var(--shadow-royal);
+    border-top: 3px solid var(--accent-gold);
+}
+
+footer p {
+    margin: 0;
+    color: white !important;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Media queries */
@@ -61,5 +242,19 @@
 @media (max-width: 900px) {
   .searchCity,
   .timeStamp {
-    text-align: center;};
+    text-align: center;
+  }
+  
+  .dayBox {
+    margin: 8px;
+    padding: 1rem;
+  }
+  
+  #todayMainInfo .data {
+    font-size: 1.1rem;
+  }
+  
+  .search-button {
+    width: 100% !important;
+  }
 }
