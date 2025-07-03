@@ -1,8 +1,8 @@
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
-    --primary-royal: #1e4#5167a00af;
+    --primary-royal: #5167a0;
     --secondary-royal: #1d4ed8;
-    --accent-gold: #ecaaa1;
+    --accent-gold: #b893a0;
     --light-blue: #dbeafe;
     --luxury-white: #ffffff;
     --soft-gold: #fde68a;
@@ -28,7 +28,6 @@ body {
 
 /* Header and Navigation */
 .navbar {
-    background: linear-gradient(134deg, var(--primary-royal) 0%, var(--secondary-royal) 100%) !important;
     box-shadow: 0 4px 15px var(--shadow-royal);
     border-bottom: 3px solid var(--accent-gold);
 }
@@ -42,20 +41,20 @@ body {
     height: 50px;
     border-radius: 30px;
     padding-left: 35px;
-    border: 2px solid var(--border-gold);
+    border: 1px solid var(--accent-gold);
     box-shadow: 0 4px 15px var(--shadow-royal);
     background-color: var(--luxury-white);
     transition: all 0.3s ease;
 }
 
 .search-input:focus {
-    border-color: var(--primary-royal);
+    border-color: var(--accent-gold);
     box-shadow: 0 4px 20px var(--shadow-royal), 0 0 0 3px var(--accent-gold);
     outline: none;
 }
 
 .search-button {
-    background: linear-gradient(135deg, var(--primary-royal), var(--secondary-royal));
+    background: var(--accent-gold);
     border: 2px solid var(--accent-gold);
     border-radius: 25px;
     font-weight: 600;
