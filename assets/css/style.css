@@ -30,6 +30,7 @@ body {
 .navbar {
     box-shadow: 0 4px 15px var(--shadow-royal);
     border-bottom: 3px solid var(--accent-gold);
+    
 }
 
 /* Search Bar */
