@@ -44,22 +44,15 @@ function onfetchWeather() {
                     const { main, description, icon } =  weatherData.weather[0];
                     const {sunrise, sunset} = weatherData.sys;
                     const wind = weatherData.wind.speed;
+                    // const description = weatherData.weather[0].description;
                     const weatherIconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
-                    const timezoneOffset = weatherData.timezone; // from API
-                    const localTimeStr = getLocalTimeFromOffset(timezoneOffset);
-                    const sunriseFormatted = formatTime(sunrise, timezoneOffset);
-                    const sunsetFormatted = formatTime(sunset, timezoneOffset);
-
-                    document.querySelector(".timeStamp").textContent = "Local time: " + localTimeStr;
                     document.querySelector(".todayIcon").src = weatherIconURL;
                     document.querySelector(".mainDescription").textContent = main + " - " + description;
                     document.querySelector(".tempNow").textContent = temp + "°C";
                     document.querySelector(".feel").textContent = feels_like + "°C";
                     document.querySelector(".humidity").textContent = humidity;
                     document.querySelector(".wind").textContent = wind + " mph";
-                    document.querySelector(".sunrise").textContent = sunriseFormatted;
-                    document.querySelector(".sunset").textContent = sunsetFormatted;
-                    
+
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
