@@ -9,10 +9,8 @@ searchInputEl.addEventListener("keypress", function(event) {
 });
 function onfetchWeather() {
     const city = searchInputEl.value.trim();
-    
     if (city){
         const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
-        
         fetch(geoUrl)
         .then((response) => {
             if (!response.ok) {
@@ -27,7 +25,7 @@ function onfetchWeather() {
                 document.querySelector(".searchCity").textContent = data[0].name + ", " + data[0].country
                 const { lat, lon, name, country } = data[0]; // this is known as: object destructuring
                 console.log(`City: ${name}, Country: ${country}, Lat: ${lat}, Lon: ${lon}`);
-                const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;  
+                const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
                  // Fetch weather using lat & lon
                 fetch(weatherUrl)
                 .then((response) => {
@@ -37,7 +35,7 @@ function onfetchWeather() {
                     return response.json();
                 })
                 .then((weatherData) => {
-                    console.log(weatherData); 
+                    console.log(weatherData);
                     const { temp, feels_like, humidity } = weatherData.main;
                     const { main, description, icon } =  weatherData.weather[0];
                     const {sunrise, sunset} = weatherData.sys;
@@ -47,6 +45,14 @@ function onfetchWeather() {
                     const localTimeStr = getLocalTimeFromOffset(timezoneOffset);
                     const sunriseFormatted = formatTime(sunrise, timezoneOffset);
                     const sunsetFormatted = formatTime(sunset, timezoneOffset);
+                    const iconContainer = document.querySelector(".col-12.col-md-4.d-flex.justify-content-center.align-items-center");
+                    if (icon.endsWith("d")) {
+                        iconContainer.classList.remove("bg-dark");
+                        iconContainer.style.backgroundColor = "skyblue";
+                    } else {
+                        iconContainer.classList.add("bg-dark");
+                        iconContainer.style.backgroundColor = "";
+                    }
                     document.querySelector(".timeStamp").textContent = "Local time: " + localTimeStr;
                     document.querySelector(".todayIcon").src = weatherIconURL;
                     document.querySelector(".mainDescription").textContent = main + " - " + description;
@@ -56,7 +62,6 @@ function onfetchWeather() {
                     document.querySelector(".wind").textContent = wind + " mph";
                     document.querySelector(".sunrise").textContent = sunriseFormatted;
                     document.querySelector(".sunset").textContent = sunsetFormatted;
-                    
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
@@ -69,8 +74,6 @@ function onfetchWeather() {
     } else {
         console.log("Please enter a City.");
     }
-     
-    
 }
 function formatTime(timestamp, timezoneOffset) {
   const localDate = new Date((timestamp + timezoneOffset) * 1000);
