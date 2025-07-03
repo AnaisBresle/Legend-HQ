@@ -41,7 +41,7 @@ body {
     height: 50px;
     border-radius: 30px;
     padding-left: 35px;
-    border: 1px solid var(--accent-gold);
+    border: 2px solid var(--border-gold);
     box-shadow: 0 4px 15px var(--shadow-royal);
     background-color: var(--luxury-white);
     transition: all 0.3s ease;
