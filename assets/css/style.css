@@ -1,14 +1,14 @@
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
-    --primary-royal: #1e40af;
+    --primary-royal: #1e4#5167a00af;
     --secondary-royal: #1d4ed8;
-    --accent-gold: #fbbf24;
+    --accent-gold: #ecaaa1;
     --light-blue: #dbeafe;
     --luxury-white: #ffffff;
     --soft-gold: #fde68a;
     --text-navy: #1e3a8a;
     --text-dark: #1e3a8a;
-    --text-gold: #d97706;
+    --text-gold: #b893a0;
     --text-medium: #3730a3;
     --royal-gray: #64748b;
     --border-gold: #fed7aa;
@@ -28,7 +28,7 @@ body {
 
 /* Header and Navigation */
 .navbar {
-    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--secondary-royal) 100%) !important;
+    background: linear-gradient(134deg, var(--primary-royal) 0%, var(--secondary-royal) 100%) !important;
     box-shadow: 0 4px 15px var(--shadow-royal);
     border-bottom: 3px solid var(--accent-gold);
 }
@@ -138,6 +138,29 @@ body {
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
+
+
+/* Font Awsome icons */
+
+.sunrise, .sunset::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    margin: 0.025rem auto;
+    color: #b893a0;
+}
+
+
+.sunrise::before {
+    content: "\f185";
+}
+
+.sunset::before {
+    content: "\f186";
+}
+
+
 
 /* Sunrise/Sunset section */
 .sunrise, .sunset {
