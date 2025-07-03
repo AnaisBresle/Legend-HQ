@@ -42,16 +42,24 @@ function onfetchWeather() {
                     console.log(weatherData); 
                     const { temp, feels_like, humidity } = weatherData.main;
                     const { main, description, icon } =  weatherData.weather[0];
+                    const {sunrise, sunset} = weatherData.sys;
                     const wind = weatherData.wind.speed;
-                    // const description = weatherData.weather[0].description;
                     const weatherIconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
+                    const sunriseFormatted = formatTime(sunrise); 
+                    const sunsetFormatted = formatTime(sunset);
+                    const timezoneOffset = weatherData.timezone; // from API
+                    const localTimeStr = getLocalTimeFromOffset(timezoneOffset);
+
+                    document.querySelector(".timeStamp").textContent = "Local time: " + localTimeStr;
                     document.querySelector(".todayIcon").src = weatherIconURL;
                     document.querySelector(".mainDescription").textContent = main + " - " + description;
                     document.querySelector(".tempNow").textContent = temp + "°C";
                     document.querySelector(".feel").textContent = feels_like + "°C";
                     document.querySelector(".humidity").textContent = humidity;
                     document.querySelector(".wind").textContent = wind + " mph";
-
+                    document.querySelector(".sunrise").textContent = sunriseFormatted;
+                    document.querySelector(".sunset").textContent = sunsetFormatted;
+                    
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
@@ -69,3 +77,30 @@ function onfetchWeather() {
 }
 
 
+function formatTime(timestamp) {
+  const date = new Date(timestamp * 1000);
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
+function getLocalTimeFromOffset(timezoneOffsetInSeconds) {
+  // Get current time in UTC (in milliseconds)
+  const nowUTC = new Date();
+
+  // Create new time adjusted by the timezone offset
+  const localTime = new Date(nowUTC.getTime() + timezoneOffsetInSeconds * 1000);
+
+  // Format it nicely (e.g., "Tuesday, 2 July 2025 – 16:45")
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  };
+
+  return localTime.toLocaleString("en-GB", options);
+}
