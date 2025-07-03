@@ -44,6 +44,7 @@ function onfetchWeather() {
                     const { main, description, icon } =  weatherData.weather[0];
                     const {sunrise, sunset} = weatherData.sys;
                     const wind = weatherData.wind.speed;
+Testing-&-debugging-functionalility
                     const weatherIconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
                     const sunriseFormatted = formatTime(sunrise); 
                     const sunsetFormatted = formatTime(sunset);
@@ -59,6 +60,7 @@ function onfetchWeather() {
                     document.querySelector(".wind").textContent = wind + " mph";
                     document.querySelector(".sunrise").textContent = sunriseFormatted;
                     document.querySelector(".sunset").textContent = sunsetFormatted;
+
                     
                 })
                 .catch((error) => {
