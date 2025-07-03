@@ -43,7 +43,7 @@ body {
     border-radius: 30px;
     padding-left: 35px;
     border: 2px solid var(--border-gold);
-    box-shadow: 0 4px 15px var(--shadow-royal);
+    box-shadow: 0 4px 16px var(--shadow-royal);
     background-color: var(--luxury-white);
     transition: all 0.3s ease;
 }
