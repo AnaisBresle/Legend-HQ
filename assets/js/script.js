@@ -52,7 +52,7 @@ function onfetchWeather() {
                     document.querySelector(".feel").textContent = feels_like + "°C";
                     document.querySelector(".humidity").textContent = humidity;
                     document.querySelector(".wind").textContent = wind + " mph";
-
+ 
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
