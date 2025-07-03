@@ -74,7 +74,7 @@ body {
 
 /*Main Forecast */
 #todayForecast {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--light-blue) 50%, var(--luxury-white) 100%);
+    background: var(--luxury-white);
     padding: 2rem 0;
 }
 
