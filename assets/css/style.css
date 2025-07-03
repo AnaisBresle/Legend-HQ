@@ -1,6 +1,6 @@
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
-    --primary-royal: #5167a0;
+    --primary-royal: #5167a0;    
     --secondary-royal: #1d4ed8;
     --accent-gold: #b893a0;
     --light-blue: #dbeafe;
@@ -28,6 +28,7 @@ body {
 
 /* Header and Navigation */
 .navbar {
+    background: linear-gradient(134deg, var(--primary-royal) 0%, var(--secondary-royal) 100%) !important;
     box-shadow: 0 4px 15px var(--shadow-royal);
     border-bottom: 3px solid var(--accent-gold);
 }
@@ -59,7 +60,7 @@ body {
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
-    color: white;
+    color: rgb(15, 9, 129);
     position: relative;
     overflow: hidden;
 }
