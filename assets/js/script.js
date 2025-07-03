@@ -1,21 +1,13 @@
-// https://api.openweathermap.org/data/3.0/onecall/timemachine?lat=51.5073219&lon=0.1276474&dt={time}&appid=f23ee9deb4e1a7450f3157c44ed020e1
-//const API_KEY = "f23ee9deb4e1a7450f3157c44ed020e1";
-
-// First, get the latitude and longitude for the city
-//const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`;
-// https://api.openweathermap.org/geo/1.0/direct?q=London&limit=1&appid=f23ee9deb4e1a7450f3157c44ed020e1
-
-//const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-// https://api.openweathermap.org/data/2.5/weather?lat=51.5073219&lon=-0.1276474&appid=f23ee9deb4e1a7450f3157c44ed020e1&units=metric
-
-// DOM Elements
-// const addTaskEl = document.getElementById("add-task");
-// const taskTableBodyEl = document.querySelector(".task-table tbody");
-const searchInputEl = document.querySelector(".search-input");
-
 const API_KEY = "f23ee9deb4e1a7450f3157c44ed020e1";
 
+// DOM Elements
+const searchInputEl = document.querySelector(".search-input");
 document.querySelector(".search-button").addEventListener("click", onfetchWeather);
+searchInputEl.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        onfetchWeather();
+    }
+});
 
 function onfetchWeather() {
     const city = searchInputEl.value.trim();
@@ -34,10 +26,7 @@ function onfetchWeather() {
             if (data.length === 0) {
                 console.log("No city found.");
             } else {
-                // const cityHedaderEl = document.querySelector(".searchCity");
-                // cityHedaderEl.textContent = data[0].name + ", " + data[0].country
                 document.querySelector(".searchCity").textContent = data[0].name + ", " + data[0].country
-                // alert(data[0].country);
                 const { lat, lon, name, country } = data[0]; // this is known as: object destructuring
                 console.log(`City: ${name}, Country: ${country}, Lat: ${lat}, Lon: ${lon}`);
                 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;  
@@ -50,20 +39,29 @@ function onfetchWeather() {
                     return response.json();
                 })
                 .then((weatherData) => {
-                    console.log(weatherData); // Here’s your actual weather info
-                    const temp = weatherData.main.temp;
-                    const feels_like = weatherData.main.feels_like;
-                    const humidity = weatherData.main.humidity;
-                    
+                    console.log(weatherData); 
+                    const { temp, feels_like, humidity } = weatherData.main;
+                    const { main, description, icon } =  weatherData.weather[0];
+                    const {sunrise, sunset} = weatherData.sys;
                     const wind = weatherData.wind.speed;
-                    const description = weatherData.weather[0].description;
-                    document.querySelector(".tempNow").textContent = temp + "°C"
-                    document.querySelector(".feel").textContent = feels_like + "°C"
-                    document.querySelector(".humidity").textContent = humidity
-                    document.querySelector(".wind").textContent = wind + "mph"
-                    document.querySelector(".mainDescription").textContent = description
+Testing-&-debugging-functionalility
+                    const weatherIconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
+                    const sunriseFormatted = formatTime(sunrise); 
+                    const sunsetFormatted = formatTime(sunset);
+                    const timezoneOffset = weatherData.timezone; // from API
+                    const localTimeStr = getLocalTimeFromOffset(timezoneOffset);
+
+                    document.querySelector(".timeStamp").textContent = "Local time: " + localTimeStr;
+                    document.querySelector(".todayIcon").src = weatherIconURL;
+                    document.querySelector(".mainDescription").textContent = main + " - " + description;
+                    document.querySelector(".tempNow").textContent = temp + "°C";
+                    document.querySelector(".feel").textContent = feels_like + "°C";
+                    document.querySelector(".humidity").textContent = humidity;
+                    document.querySelector(".wind").textContent = wind + " mph";
+                    document.querySelector(".sunrise").textContent = sunriseFormatted;
+                    document.querySelector(".sunset").textContent = sunsetFormatted;
+
                     
-                    //alert(`Current temperature: ${temp}°C\nConditions: ${description}`);
                 })
                 .catch((error) => {
                     console.error("Error:", error.message);
@@ -81,3 +79,30 @@ function onfetchWeather() {
 }
 
 
+function formatTime(timestamp) {
+  const date = new Date(timestamp * 1000);
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
+function getLocalTimeFromOffset(timezoneOffsetInSeconds) {
+  // Get current time in UTC (in milliseconds)
+  const nowUTC = new Date();
+
+  // Create new time adjusted by the timezone offset
+  const localTime = new Date(nowUTC.getTime() + timezoneOffsetInSeconds * 1000);
+
+  // Format it nicely (e.g., "Tuesday, 2 July 2025 – 16:45")
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  };
+
+  return localTime.toLocaleString("en-GB", options);
+}
