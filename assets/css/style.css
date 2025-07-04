@@ -1,17 +1,14 @@
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
     --primary-royal: #5167a0;    
-    --secondary-royal: #1d4ed8;
-    --accent-gold: #b893a0;
-    --light-blue: #dbeafe;
-    --luxury-white: #ffffff;
-    --soft-gold: #fde68a;
-    --text-navy: #1e3a8a;
-    --text-dark: #1e3a8a;
-    --text-gold: #b893a0;
+    --secondary-royal: #847da0;
+    --accent-gold: #ecaaa1;
+    --luxury-white: #f9f9f9;
+    --soft-gold:#b893a0;
+     --text-dark: #333333;
+    --text-gold: #ecaaa1;
     --text-medium: #3730a3;
-    --royal-gray: #64748b;
-    --border-gold: #fed7aa;
+    --border-gold: #ecaaa1;
     --shadow-royal: rgba(30, 64, 175, 0.15);
     --shadow-gold: rgba(251, 191, 36, 0.25);
 }
@@ -21,7 +18,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, var(--light-blue) 0%, var(--luxury-white) 100%);
+    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--luxury-white) 100%);
     color: var(--text-dark);
     min-height: 100vh;
 }
@@ -41,7 +38,6 @@ body {
     height: 50px;
     border-radius: 30px;
     padding-left: 35px;
-    border: 2px solid var(--border-gold);
     box-shadow: 0 4px 15px var(--shadow-royal);
     background-color: var(--luxury-white);
     transition: all 0.3s ease;
@@ -49,26 +45,26 @@ body {
 
 .search-input:focus {
     border-color: var(--accent-gold);
-    box-shadow: 0 4px 20px var(--shadow-royal), 0 0 0 3px var(--accent-gold);
+    box-shadow: 0 1px 2px var(--shadow-royal), 0 0 0 1px var(--accent-gold);
     outline: none;
 }
 
 .search-button {
     background: var(--accent-gold);
-    border: 2px solid var(--accent-gold);
+    border: none;
     border-radius: 25px;
     font-weight: 600;
     transition: all 0.3s ease;
-    color: rgb(15, 9, 129);
+    color: var(--text-dark);
     position: relative;
     overflow: hidden;
 }
 
 .search-button:hover {
-    background: linear-gradient(135deg, var(--secondary-royal), var(--primary-royal));
-    transform: translateY(-2px);
+    background: var(--luxury-white);
     box-shadow: 0 8px 25px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
-    border-color: var(--text-gold);
+    border-color: var(--border-gold);
+    color: var(--text-dark);
 }
 
 /*Main Forecast */
@@ -83,7 +79,7 @@ body {
 }
 
 .timeStamp {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.2rem;
     color: var(--text-gold);
 }
@@ -92,21 +88,11 @@ body {
     background-color: var(--luxury-white);
     margin: 1.5rem auto;
     border-radius: 16px;
-    border: 2px solid var(--border-gold);
-    box-shadow: 0 10px 30px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
+    box-shadow: 0 10px 30px var(--shadow-royal);
     overflow: hidden;
     position: relative;
 }
 
-.todayFocus::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--primary-royal), var(--accent-gold));
-}
 
 .todayIcon {
     max-width: 120px;
@@ -124,7 +110,7 @@ body {
 }
 
 #todayMainInfo h6 {
-    color: var(--text-gold);
+    color: var(--text-dark);
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -141,36 +127,64 @@ body {
 
 /* Font Awsome icons */
 
-.sunrise, .sunset::before {
+h6.feellb::before, h6.windlb::before, h6.tempNowlb::before, h6.humiditylb::before,h4.sunriselb::before, h4.sunsetlb::before {
     font-family: "Font Awesome 6 Free";
-    font-weight: 600;
+    font-weight: 300;
     display: block;
     text-align: center;
-    margin: 0.025rem auto;
-    color: #b893a0;
+    margin: 0.25rem auto;
 }
 
 
-.sunrise::before {
+h4.sunriselb::before {
     content: "\f185";
+    color: #fcd708b6;
 }
 
-.sunset::before {
+h4.sunsetlb::before {
     content: "\f186";
+    color: #0c0c0cb6;
 }
+
+
+h6.feellb::before {
+ content: "\f2c9";
+    color: #727272b6;
+     font-weight: 600;
+}
+
+
+
+h6.windlb::before {
+ content: "\f72e";
+    color: #727272b6;
+     font-weight: 600;
+}
+
+
+h6.tempNowlb::before {
+ content: "\f2ca";
+    color: var(--accent-gold);
+    font-weight: 600;
+} 
+
+
+h6.humiditylb::before {
+ content: "\f043";
+    color: var(--primary-royal);
+    font-weight: 600;}
 
 
 
 /* Sunrise/Sunset section */
-.sunrise, .sunset {
+.sunriselb, .sunsetlb {
     color: var(--text-gold);
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.1rem;
 }
 
 /* Week Forecast */
 #fiveDayForecast {
-    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--secondary-royal) 100%);
     color: white;
     position: relative;
 }
@@ -197,7 +211,7 @@ body {
 .dayBox {
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.95);
-    border: 2px solid var(--accent-gold);
+    border: 1px solid var(--accent-gold);
     box-shadow: 0 8px 25px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
     margin: 10px;
     padding: 1.5rem;
@@ -207,15 +221,7 @@ body {
     overflow: hidden;
 }
 
-.dayBox::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-gold), var(--primary-royal));
-}
+
 
 .dayBox:hover {
     transform: translateY(-8px);
