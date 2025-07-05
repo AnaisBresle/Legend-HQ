@@ -1,3 +1,8 @@
+/* Hide elements until populated */
+.hidden {
+    display: none !important;
+}
+
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
     --primary-royal: #5167a0;    

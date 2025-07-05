@@ -36,6 +36,9 @@ function onfetchWeather() {
                 })
                 .then((weatherData) => {
                     console.log(weatherData);
+                    // Show the today forecast section
+                    document.querySelector("#todayForecast").classList.remove("hidden");
+                    
                     const { temp, feels_like, humidity } = weatherData.main;
                     const { main, description, icon } =  weatherData.weather[0];
                     const {sunrise, sunset} = weatherData.sys;
@@ -58,7 +61,7 @@ function onfetchWeather() {
                     document.querySelector(".mainDescription").textContent = main + " - " + description;
                     document.querySelector(".tempNow").textContent = temp + "°C";
                     document.querySelector(".feel").textContent = feels_like + "°C";
-                    document.querySelector(".humidity").textContent = humidity;
+                    document.querySelector(".humidity").textContent = humidity + "%";
                     document.querySelector(".wind").textContent = wind + " mph";
                     document.querySelector(".sunrise").textContent = sunriseFormatted;
                     document.querySelector(".sunset").textContent = sunsetFormatted;
