@@ -5,14 +5,13 @@
 
 /* Royal Blue & Gold Premium & Luxury Palette */
 :root {
-    --primary-royal: #5167a0;    
+    --primary-royal: #5167a0;
     --secondary-royal: #847da0;
     --accent-gold: #ecaaa1;
     --luxury-white: #f9f9f9;
-    --soft-gold:#b893a0;
-     --text-dark: #333333;
+    --soft-gold: #b893a0;
+    --text-dark: #333333;
     --text-gold: #ecaaa1;
-    --text-medium: #3730a3;
     --border-gold: #ecaaa1;
     --shadow-royal: rgba(30, 64, 175, 0.15);
     --shadow-gold: rgba(251, 191, 36, 0.25);
@@ -22,17 +21,34 @@
     font-size: 1rem;
 }
 
+html,
 body {
-    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--luxury-white) 100%);
-    color: var(--text-dark);
-    min-height: 100vh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header and Navigation */
-.navbar {
-    border-bottom: 3px solid var(--accent-gold);
-    
+main {
+    flex: 1;
+    /* pushing Footer to bottom */
 }
+
+body {
+    background: linear-gradient(135deg, var(--primary-royal) 0%, var(--luxury-white) 100%);
+    background-repeat: no-repeat;
+    /* making sure the whole page has this background and more importantly it does not repeat/restart at each section */
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--text-dark);
+    min-height: 100vh;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+
+
+
 
 /* Search Bar */
 .search-location {
@@ -63,6 +79,7 @@ body {
     color: var(--text-dark);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .search-button:hover {
@@ -106,8 +123,9 @@ body {
 
 .mainDescription {
     font-style: italic;
-    color: var(--text-medium);
-    font-size: 1.1rem;
+    color: var(--secondary-royal);
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .mainDescription::first-letter {
@@ -132,7 +150,12 @@ body {
 
 /* Font Awsome icons */
 
-h6.feellb::before, h6.windlb::before, h6.tempNowlb::before, h6.humiditylb::before,h4.sunriselb::before, h4.sunsetlb::before {
+h6.feellb::before,
+h6.windlb::before,
+h6.tempNowlb::before,
+h6.humiditylb::before,
+h4.sunriselb::before,
+h4.sunsetlb::before {
     font-family: "Font Awesome 6 Free";
     font-weight: 300;
     display: block;
@@ -153,36 +176,38 @@ h4.sunsetlb::before {
 
 
 h6.feellb::before {
- content: "\f2c9";
+    content: "\f2c9";
     color: #727272b6;
-     font-weight: 600;
+    font-weight: 600;
 }
 
 
 
 h6.windlb::before {
- content: "\f72e";
+    content: "\f72e";
     color: #727272b6;
-     font-weight: 600;
+    font-weight: 600;
 }
 
 
 h6.tempNowlb::before {
- content: "\f2ca";
+    content: "\f2ca";
     color: var(--accent-gold);
     font-weight: 600;
-} 
+}
 
 
 h6.humiditylb::before {
- content: "\f043";
+    content: "\f043";
     color: var(--primary-royal);
-    font-weight: 600;}
+    font-weight: 600;
+}
 
 
 
 /* Sunrise/Sunset section */
-.sunriselb, .sunsetlb {
+.sunriselb,
+.sunsetlb {
     color: var(--text-gold);
     font-weight: 400;
     font-size: 1.1rem;
@@ -194,16 +219,6 @@ h6.humiditylb::before {
     position: relative;
 }
 
-#fiveDayForecast::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(251, 191, 36, 0.1) 50%, transparent 70%);
-    pointer-events: none;
-}
 
 #fiveDayForecast h1 {
     color: white;
@@ -216,8 +231,6 @@ h6.humiditylb::before {
 .dayBox {
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.95);
-    border: 1px solid var(--accent-gold);
-    box-shadow: 0 8px 25px var(--shadow-royal), 0 4px 15px var(--shadow-gold);
     margin: 10px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -237,8 +250,8 @@ h6.humiditylb::before {
 
 .dayBox h3 {
     color: var(--primary-royal);
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
 }
 
 .weatherIcon {
@@ -253,13 +266,12 @@ h6.humiditylb::before {
 }
 
 .tempLow {
-    color: var(--royal-gray);
+    color: var(--text-dark);
 }
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg, var(--secondary-royal) 0%, var(--primary-royal) 100%) !important;
-    box-shadow: 0 -4px 15px var(--shadow-royal);
+
     border-top: 3px solid var(--accent-gold);
 }
 
@@ -273,21 +285,23 @@ footer p {
 /* Media queries */
 
 @media (max-width: 900px) {
-  .searchCity,
-  .timeStamp {
-    text-align: center;
-  }
-  
-  .dayBox {
-    margin: 8px;
-    padding: 1rem;
-  }
-  
-  #todayMainInfo .data {
-    font-size: 1.1rem;
-  }
-  
-  .search-button {
-    width: 100% !important;
-  }
+
+    .searchCity,
+    .timeStamp {
+        text-align: center;
+    }
+
+    .dayBox {
+        margin: 8px;
+        padding: 1rem;
+    }
+
+    #todayMainInfo .data {
+        font-size: 1.1rem;
+    }
+
+    .search-button {
+        width: 100% !important;
+
+    }
 }
