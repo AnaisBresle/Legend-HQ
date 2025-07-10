@@ -71,7 +71,8 @@ function onfetchWeather() {
                     const sunriseFormatted = formatTime(sunrise, timezoneName);
                     const sunsetFormatted = formatTime(sunset, timezoneName);
                     // display the today forecast section
-                    document.querySelector("#todayForecast").classList.remove("hidden");                  
+                    document.querySelector("#todayForecast").classList.remove("hidden"); 
+                    document.querySelector("#fiveDayForecast").classList.remove("hidden");                 
                     const iconContainerEl = document.querySelector(".col-12.col-md-4.d-flex.justify-content-center.align-items-center");
                     if (icon.endsWith("d")) {
                         iconContainerEl.classList.remove("bg-dark");
